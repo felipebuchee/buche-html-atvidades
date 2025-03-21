@@ -1,0 +1,115 @@
+<?php 
+
+function desenhaLinha(array $dadosMedalhas){
+    print "<tr>";
+    print "<td>" . $dadosMedalhas["ordem"] . "</td>";
+    print "<td>" . "<img src='$dadosMedalhas[imagem]'>" . "</td>";
+    print "<td>" . $dadosMedalhas["país"] . "</td>";
+    print "<td>" . $dadosMedalhas["ouro"] . "</td>";
+    print "<td>" . $dadosMedalhas["prata"] . "</td>";
+    print "<td>" . $dadosMedalhas["bronze"] . "</td>";
+    print "<td>" . $dadosMedalhas["total"] . "</td>";
+    print "</tr>";
+}
+
+//programa principal
+$linhas = array();
+
+$brasil = array("ordem" => 0,
+            "imagem" => 'https://gstatic.olympics.com/s1/t_s_pog_flag/f_auto/static/flag/4x3/br', 
+            "país" => "Brasil",
+            "ouro" => 100,
+            "prata" => 100,
+            "bronze" => 100,
+            "total" => 300);
+            array_push($linhas, $brasil);
+
+$usa = array("ordem" => 1,
+            "imagem" => 'https://gstatic.olympics.com/s1/t_s_pog_flag/f_auto/static/flag/4x3/us', 
+            "país" => "Estados Unidos da América",
+            "ouro" => 46,
+            "prata" => 37,
+            "bronze" => 38,
+            "total" => 121);
+            array_push($linhas, $usa);
+
+            $china = array("ordem" => 2,
+            "imagem" => 'https://gstatic.olympics.com/s1/t_s_pog_flag/f_auto/static/flag/4x3/cn', 
+            "país" => "China",
+            "ouro" => 40,
+            "prata" => 27,
+            "bronze" => 24,
+            "total" => 91);
+            array_push($linhas, $china);
+
+            $gbr = array("ordem" => 3,
+            "imagem" => 'https://gstatic.olympics.com/s1/t_s_pog_flag/f_auto/static/flag/4x3/gb', 
+            "país" => "Grã Bretanha",
+            "ouro" => 14,
+            "prata" => 22,
+            "bronze" => 29,
+            "total" => 65);
+            array_push($linhas, $gbr);
+
+            $franca = array("ordem" => 4,
+            "imagem" => 'https://gstatic.olympics.com/s1/t_s_pog_flag/f_auto/static/flag/4x3/fr', 
+            "país" => "França",
+            "ouro" => 16,
+            "prata" => 26,
+            "bronze" => 22,
+            "total" => 64);
+            array_push($linhas, $franca);
+
+            $aust = array("ordem" => 5,
+            "imagem" => 'https://gstatic.olympics.com/s1/t_s_pog_flag/f_auto/static/flag/4x3/au', 
+            "país" => "Austrália",
+            "ouro" => 18,
+            "prata" => 29,
+            "bronze" => 16,
+            "total" => 53);
+            array_push($linhas, $aust);
+            
+
+
+
+print "<table border=1>";
+
+//cabecalho
+print "<tr>";
+print "<td>Ordem</td>";
+print "<td>Imagem</td>";
+print "<td>País</td>";
+print "<td><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMC41IDhDMC41IDMuODc2MTQgMy44NzYxNCAwLjUgOCAwLjVDMTIuMTIzOSAwLjUgMTUuNSAzLjg3NjE0IDE1LjUgOEMxNS41IDEyLjEyMzkgMTIuMTIzOSAxNS41IDggMTUuNUMzLjg3NjE0IDE1LjUgMC41IDEyLjEyMzkgMC41IDhaIiBmaWxsPSIjODA2NDAxIiBzdHJva2U9IiNGREU0OEUiLz4KICA8cGF0aCBkPSJNOS4yNDgwNSAxMkg3LjU1NDY5VjUuNDcyNjZMNS41MzMyIDYuMDk5NjFWNC43MjI2Nkw5LjA2NjQxIDMuNDU3MDNIOS4yNDgwNVYxMloiIGZpbGw9IiNGREU0OEUiLz4KPC9zdmc+'></td>";
+print "<td><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMC41IDhDMC41IDMuODc2MTQgMy44NzYxNCAwLjUgOCAwLjVDMTIuMTIzOSAwLjUgMTUuNSAzLjg3NjE0IDE1LjUgOEMxNS41IDEyLjEyMzkgMTIuMTIzOSAxNS41IDggMTUuNUMzLjg3NjE0IDE1LjUgMC41IDEyLjEyMzkgMC41IDhaIiBmaWxsPSIjNTk1OTU5IiBzdHJva2U9IiNEOEQ4RDgiLz4KICA8cGF0aCBkPSJNMTAuOTgyNCAxMkg1LjEzNDc3VjEwLjgzOThMNy44OTQ1MyA3Ljg5ODQ0QzguMjczNDQgNy40ODQzOCA4LjU1MjczIDcuMTIzMDUgOC43MzI0MiA2LjgxNDQ1QzguOTE2MDIgNi41MDU4NiA5LjAwNzgxIDYuMjEyODkgOS4wMDc4MSA1LjkzNTU1QzkuMDA3ODEgNS41NTY2NCA4LjkxMjExIDUuMjU5NzcgOC43MjA3IDUuMDQ0OTJDOC41MjkzIDQuODI2MTcgOC4yNTU4NiA0LjcxNjggNy45MDAzOSA0LjcxNjhDNy41MTc1OCA0LjcxNjggNy4yMTQ4NCA0Ljg0OTYxIDYuOTkyMTkgNS4xMTUyM0M2Ljc3MzQ0IDUuMzc2OTUgNi42NjQwNiA1LjcyMjY2IDYuNjY0MDYgNi4xNTIzNEg0Ljk2NDg0QzQuOTY0ODQgNS42MzI4MSA1LjA4Nzg5IDUuMTU4MiA1LjMzMzk4IDQuNzI4NTJDNS41ODM5OCA0LjI5ODgzIDUuOTM1NTUgMy45NjI4OSA2LjM4ODY3IDMuNzIwN0M2Ljg0MTggMy40NzQ2MSA3LjM1NTQ3IDMuMzUxNTYgNy45Mjk2OSAzLjM1MTU2QzguODA4NTkgMy4zNTE1NiA5LjQ5MDIzIDMuNTYyNSA5Ljk3NDYxIDMuOTg0MzhDMTAuNDYyOSA0LjQwNjI1IDEwLjcwNyA1LjAwMTk1IDEwLjcwNyA1Ljc3MTQ4QzEwLjcwNyA2LjE5MzM2IDEwLjU5NzcgNi42MjMwNSAxMC4zNzg5IDcuMDYwNTVDMTAuMTYwMiA3LjQ5ODA1IDkuNzg1MTYgOC4wMDc4MSA5LjI1MzkxIDguNTg5ODRMNy4zMTQ0NSAxMC42MzQ4SDEwLjk4MjRWMTJaIiBmaWxsPSIjRDhEOEQ4Ii8+Cjwvc3ZnPg=='></td>";
+print "<td><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMC41IDhDMC41IDMuODc2MTQgMy44NzYxNCAwLjUgOCAwLjVDMTIuMTIzOSAwLjUgMTUuNSAzLjg3NjE0IDE1LjUgOEMxNS41IDEyLjEyMzkgMTIuMTIzOSAxNS41IDggMTUuNUMzLjg3NjE0IDE1LjUgMC41IDEyLjEyMzkgMC41IDhaIiBmaWxsPSIjOEE1MzAzIiBzdHJva2U9IiNGQkQ1OUYiLz4KICA8cGF0aCBkPSJNNi44NTc0MiA2Ljk4NDM4SDcuNzU5NzdDOC4xODk0NSA2Ljk4NDM4IDguNTA3ODEgNi44NzY5NSA4LjcxNDg0IDYuNjYyMTFDOC45MjE4OCA2LjQ0NzI3IDkuMDI1MzkgNi4xNjIxMSA5LjAyNTM5IDUuODA2NjRDOS4wMjUzOSA1LjQ2Mjg5IDguOTIxODggNS4xOTUzMSA4LjcxNDg0IDUuMDAzOTFDOC41MTE3MiA0LjgxMjUgOC4yMzA0NyA0LjcxNjggNy44NzEwOSA0LjcxNjhDNy41NDY4OCA0LjcxNjggNy4yNzUzOSA0LjgwNjY0IDcuMDU2NjQgNC45ODYzM0M2LjgzNzg5IDUuMTYyMTEgNi43Mjg1MiA1LjM5MjU4IDYuNzI4NTIgNS42Nzc3M0g1LjAzNTE2QzUuMDM1MTYgNS4yMzI0MiA1LjE1NDMgNC44MzM5OCA1LjM5MjU4IDQuNDgyNDJDNS42MzQ3NyA0LjEyNjk1IDUuOTcwNyAzLjg0OTYxIDYuNDAwMzkgMy42NTAzOUM2LjgzMzk4IDMuNDUxMTcgNy4zMTA1NSAzLjM1MTU2IDcuODMwMDggMy4zNTE1NkM4LjczMjQyIDMuMzUxNTYgOS40Mzk0NSAzLjU2ODM2IDkuOTUxMTcgNC4wMDE5NUMxMC40NjI5IDQuNDMxNjQgMTAuNzE4OCA1LjAyNTM5IDEwLjcxODggNS43ODMyQzEwLjcxODggNi4xNzM4MyAxMC41OTk2IDYuNTMzMiAxMC4zNjEzIDYuODYxMzNDMTAuMTIzIDcuMTg5NDUgOS44MTA1NSA3LjQ0MTQxIDkuNDIzODMgNy42MTcxOUM5LjkwNDMgNy43ODkwNiAxMC4yNjE3IDguMDQ2ODggMTAuNDk2MSA4LjM5MDYyQzEwLjczNDQgOC43MzQzOCAxMC44NTM1IDkuMTQwNjIgMTAuODUzNSA5LjYwOTM4QzEwLjg1MzUgMTAuMzY3MiAxMC41NzYyIDEwLjk3NDYgMTAuMDIxNSAxMS40MzE2QzkuNDcwNyAxMS44ODg3IDguNzQwMjMgMTIuMTE3MiA3LjgzMDA4IDEyLjExNzJDNi45Nzg1MiAxMi4xMTcyIDYuMjgxMjUgMTEuODkyNiA1LjczODI4IDExLjQ0MzRDNS4xOTkyMiAxMC45OTQxIDQuOTI5NjkgMTAuNDAwNCA0LjkyOTY5IDkuNjYyMTFINi42MjMwNUM2LjYyMzA1IDkuOTgyNDIgNi43NDIxOSAxMC4yNDQxIDYuOTgwNDcgMTAuNDQ3M0M3LjIyMjY2IDEwLjY1MDQgNy41MTk1MyAxMC43NTIgNy44NzEwOSAxMC43NTJDOC4yNzM0NCAxMC43NTIgOC41ODc4OSAxMC42NDY1IDguODE0NDUgMTAuNDM1NUM5LjA0NDkyIDEwLjIyMDcgOS4xNjAxNiA5LjkzNzUgOS4xNjAxNiA5LjU4NTk0QzkuMTYwMTYgOC43MzQzOCA4LjY5MTQxIDguMzA4NTkgNy43NTM5MSA4LjMwODU5SDYuODU3NDJWNi45ODQzOFoiIGZpbGw9IiNGQkQ1OUYiLz4KPC9zdmc+'></td>";
+print "<td><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiBmaWxsPSJub25lIj4KICA8bWFzayBpZD0icGF0aC0xLWluc2lkZS0xXzIzMDZfNjU2IiBmaWxsPSJ3aGl0ZSI+CiAgICA8cGF0aCBkPSJNOC4wMDAwMSAwQzYuMDQ0NDYgMCA0LjQ0NDQ2IDEuNiA0LjQ0NDQ2IDMuNTU1NTZDNC40NDQ0NiA1LjUxMTExIDYuMDQ0NDYgNy4xMTExMSA4LjAwMDAxIDcuMTExMTFDOS45NTU1NyA3LjExMTExIDExLjU1NTYgNS41MTExMSAxMS41NTU2IDMuNTU1NTZDMTEuNTU1NiAxLjYgOS45NTU1NyAwIDguMDAwMDEgMFoiLz4KICA8L21hc2s+CiAgPHBhdGggZD0iTTguMDAwMDEgMEM2LjA0NDQ2IDAgNC40NDQ0NiAxLjYgNC40NDQ0NiAzLjU1NTU2QzQuNDQ0NDYgNS41MTExMSA2LjA0NDQ2IDcuMTExMTEgOC4wMDAwMSA3LjExMTExQzkuOTU1NTcgNy4xMTExMSAxMS41NTU2IDUuNTExMTEgMTEuNTU1NiAzLjU1NTU2QzExLjU1NTYgMS42IDkuOTU1NTcgMCA4LjAwMDAxIDBaIiBmaWxsPSIjODA2NDAxIi8+CiAgPHBhdGggZD0iTTguMDAwMDEgLTFDNS40OTIxNyAtMSAzLjQ0NDQ2IDEuMDQ3NzIgMy40NDQ0NiAzLjU1NTU2SDUuNDQ0NDZDNS40NDQ0NiAyLjE1MjI4IDYuNTk2NzQgMSA4LjAwMDAxIDFWLTFaTTMuNDQ0NDYgMy41NTU1NkMzLjQ0NDQ2IDYuMDYzNCA1LjQ5MjE3IDguMTExMTEgOC4wMDAwMSA4LjExMTExVjYuMTExMTFDNi41OTY3NCA2LjExMTExIDUuNDQ0NDYgNC45NTg4MyA1LjQ0NDQ2IDMuNTU1NTZIMy40NDQ0NlpNOC4wMDAwMSA4LjExMTExQzEwLjUwNzkgOC4xMTExMSAxMi41NTU2IDYuMDYzNCAxMi41NTU2IDMuNTU1NTZIMTAuNTU1NkMxMC41NTU2IDQuOTU4ODMgOS40MDMyOCA2LjExMTExIDguMDAwMDEgNi4xMTExMVY4LjExMTExWk0xMi41NTU2IDMuNTU1NTZDMTIuNTU1NiAxLjA0NzcyIDEwLjUwNzkgLTEgOC4wMDAwMSAtMVYxQzkuNDAzMjggMSAxMC41NTU2IDIuMTUyMjggMTAuNTU1NiAzLjU1NTU2SDEyLjU1NTZaIiBmaWxsPSIjRkRFNDhFIiBtYXNrPSJ1cmwoI3BhdGgtMS1pbnNpZGUtMV8yMzA2XzY1NikiLz4KICA8bWFzayBpZD0icGF0aC0zLWluc2lkZS0yXzIzMDZfNjU2IiBmaWxsPSJ3aGl0ZSI+CiAgICA8cGF0aCBkPSJNMy41NTU1NiA4Ljg4ODg5QzEuNiA4Ljg4ODg5IDAgMTAuNDg4OSAwIDEyLjQ0NDRDMCAxNC40IDEuNiAxNiAzLjU1NTU2IDE2QzUuNTExMTEgMTYgNy4xMTExMSAxNC40IDcuMTExMTEgMTIuNDQ0NEM3LjExMTExIDEwLjQ4ODkgNS41MTExMSA4Ljg4ODg5IDMuNTU1NTYgOC44ODg4OVoiLz4KICA8L21hc2s+CiAgPHBhdGggZD0iTTMuNTU1NTYgOC44ODg4OUMxLjYgOC44ODg4OSAwIDEwLjQ4ODkgMCAxMi40NDQ0QzAgMTQuNCAxLjYgMTYgMy41NTU1NiAxNkM1LjUxMTExIDE2IDcuMTExMTEgMTQuNCA3LjExMTExIDEyLjQ0NDRDNy4xMTExMSAxMC40ODg5IDUuNTExMTEgOC44ODg4OSAzLjU1NTU2IDguODg4ODlaIiBmaWxsPSIjNTk1OTU5Ii8+CiAgPHBhdGggZD0iTTMuNTU1NTYgNy44ODg4OUMxLjA0NzcyIDcuODg4ODkgLTEgOS45MzY2IC0xIDEyLjQ0NDRIMUMxIDExLjA0MTIgMi4xNTIyOCA5Ljg4ODg5IDMuNTU1NTYgOS44ODg4OVY3Ljg4ODg5Wk0tMSAxMi40NDQ0Qy0xIDE0Ljk1MjMgMS4wNDc3MiAxNyAzLjU1NTU2IDE3VjE1QzIuMTUyMjggMTUgMSAxMy44NDc3IDEgMTIuNDQ0NEgtMVpNMy41NTU1NiAxN0M2LjA2MzQgMTcgOC4xMTExMSAxNC45NTIzIDguMTExMTEgMTIuNDQ0NEg2LjExMTExQzYuMTExMTEgMTMuODQ3NyA0Ljk1ODgzIDE1IDMuNTU1NTYgMTVWMTdaTTguMTExMTEgMTIuNDQ0NEM4LjExMTExIDkuOTM2NiA2LjA2MzQgNy44ODg4OSAzLjU1NTU2IDcuODg4ODlWOS44ODg4OUM0Ljk1ODgzIDkuODg4ODkgNi4xMTExMSAxMS4wNDEyIDYuMTExMTEgMTIuNDQ0NEg4LjExMTExWiIgZmlsbD0iI0Q4RDhEOCIgbWFzaz0idXJsKCNwYXRoLTMtaW5zaWRlLTJfMjMwNl82NTYpIi8+CiAgPG1hc2sgaWQ9InBhdGgtNS1pbnNpZGUtM18yMzA2XzY1NiIgZmlsbD0id2hpdGUiPgogICAgPHBhdGggZD0iTTEyLjQ0NDQgOC44ODg4OUMxMC40ODg5IDguODg4ODkgOC44ODg4OSAxMC40ODg5IDguODg4ODkgMTIuNDQ0NEM4Ljg4ODg5IDE0LjQgMTAuNDg4OSAxNiAxMi40NDQ0IDE2QzE0LjQgMTYgMTYgMTQuNCAxNiAxMi40NDQ0QzE2IDEwLjQ4ODkgMTQuNCA4Ljg4ODg5IDEyLjQ0NDQgOC44ODg4OVoiLz4KICA8L21hc2s+CiAgPHBhdGggZD0iTTEyLjQ0NDQgOC44ODg4OUMxMC40ODg5IDguODg4ODkgOC44ODg4OSAxMC40ODg5IDguODg4ODkgMTIuNDQ0NEM4Ljg4ODg5IDE0LjQgMTAuNDg4OSAxNiAxMi40NDQ0IDE2QzE0LjQgMTYgMTYgMTQuNCAxNiAxMi40NDQ0QzE2IDEwLjQ4ODkgMTQuNCA4Ljg4ODg5IDEyLjQ0NDQgOC44ODg4OVoiIGZpbGw9IiM4QTUzMDMiLz4KICA8cGF0aCBkPSJNMTIuNDQ0NCA3Ljg4ODg5QzkuOTM2NiA3Ljg4ODg5IDcuODg4ODkgOS45MzY2IDcuODg4ODkgMTIuNDQ0NEg5Ljg4ODg5QzkuODg4ODkgMTEuMDQxMiAxMS4wNDEyIDkuODg4ODkgMTIuNDQ0NCA5Ljg4ODg5VjcuODg4ODlaTTcuODg4ODkgMTIuNDQ0NEM3Ljg4ODg5IDE0Ljk1MjMgOS45MzY2IDE3IDEyLjQ0NDQgMTdWMTVDMTEuMDQxMiAxNSA5Ljg4ODg5IDEzLjg0NzcgOS44ODg4OSAxMi40NDQ0SDcuODg4ODlaTTEyLjQ0NDQgMTdDMTQuOTUyMyAxNyAxNyAxNC45NTIzIDE3IDEyLjQ0NDRIMTVDMTUgMTMuODQ3NyAxMy44NDc3IDE1IDEyLjQ0NDQgMTVWMTdaTTE3IDEyLjQ0NDRDMTcgOS45MzY2IDE0Ljk1MjMgNy44ODg4OSAxMi40NDQ0IDcuODg4ODlWOS44ODg4OUMxMy44NDc3IDkuODg4ODkgMTUgMTEuMDQxMiAxNSAxMi40NDQ0SDE3WiIgZmlsbD0iI0ZCRDU5RiIgbWFzaz0idXJsKCNwYXRoLTUtaW5zaWRlLTNfMjMwNl82NTYpIi8+Cjwvc3ZnPg=='></td>";
+print "</tr>";
+
+//linhas de dados
+foreach($linhas as $cidade){
+    //versao com funcao
+    desenhaLinha($cidade);
+}
+print "</table>";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        table{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+</html> 
