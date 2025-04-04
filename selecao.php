@@ -33,7 +33,7 @@ $i = 0;
 
 
 foreach($jogadores as $j){
-    $cor = $cores[$i % 2];
+    $cor = $cores[$i % 2]; //alterna as cores do fundo
     desenhaLinha($j["numero"], $j["nome"], $cor);
     $i++;
 }
