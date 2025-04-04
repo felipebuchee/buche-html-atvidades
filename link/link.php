@@ -9,7 +9,7 @@ function desenhaBotao($arrayLinks)
     echo '<button class="dropbtn">Surpresinha!</button>';
     echo '<div class="dropText">';
     foreach ($arrayLinks as $link) {
-        echo '<span><img src="' . $link->linkImg . '" width="auto" height="auto"> ' . $link->info . '</span>';
+        echo '<span><img src="' . $link->getLinkImg() . '" width="auto" height="auto"> ' . $link->getInfo() . '</span>';
     }
     echo '</div>';
     echo '</div>';

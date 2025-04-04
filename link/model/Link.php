@@ -1,8 +1,8 @@
 <?php
 
 class Link {
-    public $linkImg;
-    public $info;
+    private $linkImg;
+    private $info;
 
     function __construct($linkImg, $info) {
         $this->linkImg = $linkImg;
