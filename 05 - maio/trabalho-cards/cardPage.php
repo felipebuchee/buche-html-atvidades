@@ -15,14 +15,6 @@
 
 <body>
 
-    <div class="card mb-3">
-        <img src="https://www.amalgamcollection.com/cdn/shop/files/ForwebMCL39LNunbrandedfront_d7d12f8d-010c-4c0a-b385-d36dbd2fbd51_2000x850_crop_center.jpg?v=1741690659" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Teste</h5>
-            <p class="card-text">pq essa desgraça não funciona</p>
-        </div>
-    </div>
-
     <?php
 
     require_once('model/Card.php');
@@ -33,7 +25,7 @@
 
     $card = new Card($titulo, $desc, $imagem);
 
-    $card->getCard();
+    echo $card->getCard();
 
     ?>
 

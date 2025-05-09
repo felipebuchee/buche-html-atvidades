@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Cal Sans";
+    padding: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+form .form-control {
+    margin-bottom: 15px;
+}
+
+form .btn-success {
+    transition: background-color 0.3s ease;
+}
+
+form .btn-success:hover {
+    background-color: #218838;
+}
+
+.card {
+    max-width: 600px;
+    margin: 50px auto;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+a{
+    text-decoration: none;
+}
+
+a button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+a button:hover {
+    background-color: #5a6268;
+    text-decoration: none;
+    transition: 0.5s;
+}
