@@ -1,6 +1,6 @@
 <?php
 
-class Filme
+class Card
 {
     private $titulo;
     private $desc;
@@ -16,20 +16,11 @@ class Filme
     public function getCard()
     {
         $card = '<div class="card mb-3">';
-        $card .= '<img src="..." class="card-img-top" alt="...">';
+        $card .= '<img src="'. $this->imagem .'" class="card-img-top" alt="...">';
         $card .= '<div class="card-body">';
-        $card .= '<h5 class="card-title">Card title</h5>';
-        $card .= '<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>';
-        $card .= '<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>';
+        $card .= '<h5 class="card-title">'. $this->titulo .'</h5>';
+        $card .= '<p class="card-text">'. $this->desc . '</p>';
         $card .= '</div>';
-        $card .= '</div>';
-        $card .= '<div class="card">';
-        $card .= '<div class="card-body">';
-        $card .= '<h5 class="card-title">Card title</h5>';
-        $card .= '<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>';
-        $card .= '<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>';
-        $card .= '</div>';
-        $card .= '<img src="..." class="card-img-bottom" alt="...">';
         $card .= '</div>';
         return $card;
     }
