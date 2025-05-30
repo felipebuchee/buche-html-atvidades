@@ -17,13 +17,14 @@ if(isset($_POST["titulo"])){
     //Obter os valores digitados pelo usuário
     $titulo = $_POST["titulo"];
     $genero = $_POST["genero"];
+    $autor = $_POST["autor"];
     $qtdPag = $_POST["paginas"];
 
     //Inserir as informações na base de dados
-    $sql = "INSERT INTO livros (titulo, genero, qtd_paginas)
-            VALUES (?,?,?)";
+    $sql = "INSERT INTO livros (titulo, genero, autor, qtd_paginas)
+            VALUES (?,?,?,?)";
     $stm = $con->prepare($sql);
-    $stm->execute(array($titulo, $genero, $qtdPag));
+    $stm->execute(array($titulo, $genero, $autor, $qtdPag));
 
 }
 
@@ -46,15 +47,39 @@ if(isset($_POST["titulo"])){
             <th>Título</th>
             <th>Gênero</th>
             <th>Páginas</th>
+            <th>Autor</th>
         </tr>
 
         <?php foreach($livros as $l) : ?>   <!-- O : é pra não usar chave -->
 
             <tr>
                 <td><?= $l["id"] ?></td>   <!-- O igual é basicamente para escrever sem escrever php -->
-                <td><?= $l["titulo"] ?></td> 
-                <td><?= $l["genero"] ?></td> 
-                <td><?= $l["qtd_paginas"] ?></td> 
+                <td><?= $l["titulo"] ?></td>
+                <td>
+                    <?php 
+                    if($l["genero"] == 'D'){
+                        print 'Drama';
+                    }
+
+                    if($l["genero"] == 'F'){
+                        print 'Ficção';
+                    }
+
+                    if($l["genero"] == 'R'){
+                        print 'Romance';
+                    }
+
+                    if($l["genero"] == 'O'){
+                        print 'Outro';
+                    }
+                    ?>
+                </td>
+                <td><?= $l["qtd_paginas"] ?></td>
+                <td><?= $l["autor"] ?></td>
+                <td>
+                    <button><a onclick="return confirm('Confirma a exclusao?')" style="text-decoration: none; color:black" href="excluir.php?id=<?=$l["id"]?>">Excluir</a></button>
+                    
+                </td>   
             </tr>
 
 
@@ -71,6 +96,11 @@ if(isset($_POST["titulo"])){
         </div>
 
         <div style="margin-bottom: 10px;">
+            <label for="autor">Informe o autor</label>
+            <input name="autor" type="text" id="autor"/>
+        </div>
+
+        <div style="margin-bottom: 10px;">
             <label for="genero">Informe o gênero</label>
             <select name="genero" id="genero">
                 <option value="">---Selecione---</option>
@@ -78,7 +108,6 @@ if(isset($_POST["titulo"])){
                 <option value="F">Ficção</option>
                 <option value="R">Romance</option>
                 <option value="O">Outro</option>
-
             </select>
         </div>
 
